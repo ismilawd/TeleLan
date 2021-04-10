@@ -1,0 +1,50 @@
+.title-bar {
+    position: fixed;
+    height: 20px;
+    width: calc(100% - 160px);
+    top: -40px;
+    background: #1d232a60;
+    -webkit-app-region: drag;
+    transition: all 0.2s ease-in-out;
+    &.show {
+        top: 0;
+    }
+    > .buttons {
+        position: fixed;
+        right: 40px;
+        width: 120px;
+        height: 40px;
+        background: #1d232a;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        direction: rtl;
+        display: flex;
+        > .button {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &::before {
+                content: " ";
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+            }
+            &.button-close::before {
+                background: #ff5f58;
+            }
+            &.button-maximize::before {
+                background: #ffbd2d;
+            }
+            &.button-minimize::before {
+                background: #29ca41;
+            }
+            &:hover{
+                background: #303a46;
+            }
+        }
+    }
+}
