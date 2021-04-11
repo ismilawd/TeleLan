@@ -6,10 +6,12 @@
     background: #1d232a60;
     -webkit-app-region: drag;
     transition: all 0.2s ease-in-out;
+
     &.show {
         top: 0;
     }
-    > .buttons {
+
+    >.buttons {
         position: fixed;
         right: 40px;
         width: 120px;
@@ -20,31 +22,90 @@
         overflow: hidden;
         direction: rtl;
         display: flex;
-        > .button {
+
+        >.button {
             display: flex;
             width: 40px;
             height: 40px;
             padding: 10px;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
+
             &::before {
                 content: " ";
                 border-radius: 50%;
                 width: 20px;
                 height: 20px;
             }
+
             &.button-close::before {
                 background: #ff5f58;
             }
+
             &.button-maximize::before {
                 background: #ffbd2d;
             }
+
             &.button-minimize::before {
                 background: #29ca41;
             }
-            &:hover{
+
+            &:hover {
                 background: #303a46;
             }
         }
     }
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    background-color: #1d232a;
+    padding: 10px;
+    z-index: 9999;
+
+    &.active {
+        >.toggler {
+            box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+            background-color: #282e36;
+        }
+
+        +.aside-toggle {
+            left: 80px;
+        }
+    }
+
+    >.toggler {
+        background: #282e3600;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+        padding-left: calc(45px / 2);
+        padding-right: calc(45px / 2);
+        transition: all 0.3s ease-in-out;
+
+        >div {
+            width: 15px;
+            height: 2px;
+            background-color: #fff;
+            margin-bottom: 3px;
+            margin-top: 3px;
+        }
+    }
+
+}
+
+.aside-toggle {
+    position: relative;
+    background: #262d35;
+    width: 230px;
+    height: 100%;
+    left: -230px;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
 }

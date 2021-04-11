@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Aside from './aside/Aside.jsx';
 
 var electron = require('electron');
 
@@ -40,6 +41,7 @@ export default class WindowFrame extends Component {
     }
     render() {
         return (
+            <>
             <div className="title-bar" ref={this.refTitleBar}>
                 <div className="buttons">
                     <div className="button button-close" ref={this.refButtonClose}></div>
@@ -47,6 +49,8 @@ export default class WindowFrame extends Component {
                     <div className="button button-minimize" ref={this.refButtonMinimize}></div>
                 </div>
             </div>
+            <Aside></Aside>
+            </>
         );
     }
 }
