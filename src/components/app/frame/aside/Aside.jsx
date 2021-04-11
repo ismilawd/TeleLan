@@ -8,7 +8,14 @@ export default class Aside extends Component {
   }
   componentDidMount() {
     this.refToggler.current.addEventListener("click", (e) => {
-      e.target.parentElement.classList.toggle("active");
+      if(e.target.parentElement.classList.contains("active")){
+        e.target.parentElement.classList.remove("active");
+        document.querySelector(".app-container").classList.remove("menu-open");
+      }else{
+        e.target.parentElement.classList.add("active");
+        document.querySelector(".app-container").classList.add("menu-open");
+      }
+      //route-container
     });
   }
   render() {
