@@ -6,7 +6,7 @@
     background: #1d232a60;
     -webkit-app-region: drag;
     transition: all 0.2s ease-in-out;
-
+    z-index: 999999;
     &.show {
         top: 0;
     }
