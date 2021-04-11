@@ -11,7 +11,7 @@
         top: 0;
     }
 
-    >.buttons {
+    > .buttons {
         position: fixed;
         right: 40px;
         width: 120px;
@@ -23,7 +23,7 @@
         direction: rtl;
         display: flex;
 
-        >.button {
+        > .button {
             display: flex;
             width: 40px;
             height: 40px;
@@ -68,17 +68,17 @@
     z-index: 9999;
 
     &.active {
-        >.toggler {
+        > .toggler {
             box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
             background-color: #282e36;
         }
 
-        +.aside-toggle {
+        + .aside-toggle {
             left: 80px;
         }
     }
 
-    >.toggler {
+    > .toggler {
         background: #282e3600;
         width: 60px;
         height: 60px;
@@ -89,7 +89,7 @@
         padding-right: calc(45px / 2);
         transition: all 0.3s ease-in-out;
         cursor: pointer;
-        >div {
+        > div {
             width: 15px;
             height: 2px;
             background-color: #fff;
@@ -97,7 +97,6 @@
             margin-top: 3px;
         }
     }
-
 }
 
 .aside-toggle {
@@ -109,44 +108,100 @@
     z-index: 999;
     transition: all 0.3s ease-in-out;
 
-    >.header {
-        position: relative;
+    > {
+        .header {
+            position: relative;
 
-        padding: {
-            top: 20px;
-            left: 30px;
-            right: 30px;
-            bottom: 20px;
-        }
-
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-
-        > {
-            .title {
-                color: #fff;
-                font-size: 22px;
-                line-height: 40px;
+            padding: {
+                top: 20px;
+                left: 30px;
+                right: 30px;
+                bottom: 20px;
             }
 
-            .new-chat {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                border: 1px solid #fff;
-                background: transparent;
-                transition: all 0.2s ease-in-out;
-                cursor: pointer;
-                &:hover {
-                    background: #46505e;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            > {
+                .title {
+                    color: #fff;
+                    font-size: 22px;
+                    line-height: 40px;
                 }
 
-                >svg {
-                    width: 20px;
-                    height: 20px;
-                    padding-left: 4px;
+                .new-chat {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    background: transparent;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        background: #46505e;
+                    }
+
+                    > svg {
+                        width: 20px;
+                        height: 20px;
+                        padding-left: 4px;
+                    }
                 }
+            }
+        }
+        .menu-group {
+            width: 100%;
+            padding: {
+                left: 20px;
+                right: 20px;
+            }
+            > .menu-item {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 36px;
+                padding: {
+                    left: 10px;
+                    right: 10px;
+                };
+                margin:{
+                    top:10px;
+                    bottom: 10px;
+                };
+                border-radius: 5px;
+                background-color: #343c4500;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                color: #a0a4a7;
+                &:hover{
+                background-color: #343c45f0;
+                }
+                &.active{
+                    background-color: #343c45;
+                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.06);
+                    color:#fff;
+                }
+                > {
+                    .title {
+                        font-size: 14px;
+                        line-height: 36px;
+                    }
+                    .count{
+                        font-size: 14px;
+                        line-height: 36px;
+                    }
+                }
+            }
+        }
+        .menu-group-splitter{
+            height: 1px;
+            background-color: #373d45;
+            margin: {
+                left: 20px;
+                right: 20px;
+                top: 25px;
+                bottom: 25px;
             }
         }
     }
