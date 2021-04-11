@@ -88,7 +88,7 @@
         padding-left: calc(45px / 2);
         padding-right: calc(45px / 2);
         transition: all 0.3s ease-in-out;
-
+        cursor: pointer;
         >div {
             width: 15px;
             height: 2px;
@@ -108,4 +108,46 @@
     left: -230px;
     z-index: 999;
     transition: all 0.3s ease-in-out;
+
+    >.header {
+        position: relative;
+
+        padding: {
+            top: 20px;
+            left: 30px;
+            right: 30px;
+            bottom: 20px;
+        }
+
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+
+        > {
+            .title {
+                color: #fff;
+                font-size: 22px;
+                line-height: 40px;
+            }
+
+            .new-chat {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                background: transparent;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    background: #46505e;
+                }
+
+                >svg {
+                    width: 20px;
+                    height: 20px;
+                    padding-left: 4px;
+                }
+            }
+        }
+    }
 }
