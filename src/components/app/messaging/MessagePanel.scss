@@ -2,7 +2,7 @@
     float: left;
     width: calc(100% - 650px);
     height: 100%;
-    background: linear-gradient(30deg, #fff 0%, #e9ecf1 50%);
+    background: linear-gradient(30deg, #fff 0%, #e5e8ee 40%);
     > {
         .header {
             height: 80px;
@@ -23,12 +23,12 @@
                         right: 40px;
                     }
                     border-right: 1px solid #d1d4d8;
-                    b{
+                    b {
                         color: #45494d;
                         cursor: pointer;
                     }
                 }
-                .important{
+                .important {
                     float: left;
                     width: 80px;
                     height: 80px;
@@ -36,29 +36,131 @@
                     padding: 27px;
                     cursor: pointer;
                     transition: all 0.2s ease-in-out;
-                    &:hover{
-                        background-color: #d1d4d8F0;
+                    &:hover {
+                        background-color: #d1d4d8f0;
                     }
-                    svg{
+                    svg {
                         width: 25px;
                         height: 25px;
                     }
                 }
-                .call{
+                .call {
                     float: left;
                     width: 80px;
                     height: 80px;
                     padding: 27px;
                     cursor: pointer;
                     transition: all 0.2s ease-in-out;
-                    &:hover{
-                        background-color: #d1d4d8F0;
+                    &:hover {
+                        background-color: #d1d4d8f0;
                     }
-                    svg{
+                    svg {
                         width: 25px;
                         height: 25px;
                     }
                 }
+            }
+        }
+        .messaging-area {
+            height: calc(100% - 160px) !important;
+            width: 100%;
+            > div {
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
+.message {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 80px;
+    padding: {
+        left: 20px;
+        right: 20px;
+    }
+    &.me {
+        .avatar {
+            float: right;
+        }
+        .text {
+            float: right;
+            background-color: #0084ff;
+            color: #fff;
+            box-shadow: 5px 0px 50px 1px rgba(0, 0, 0, 0.15);
+            &::before {
+                left: unset;
+                right: -10px;
+                border-right: 0;
+                border-left: 10px solid #0084ff;
+            }
+        }
+    }
+    .avatar {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        float: left;
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .time {
+            color: #63686d;
+        }
+    }
+    .text {
+        position: relative;
+        width: auto;
+        float: left;
+        user-select: text;
+        margin: {
+            left: 20px;
+            right: 20px;
+        }
+        min-height: 60px;
+        background-color: #fff;
+        box-shadow: -5px 0px 50px 1px rgba(0, 0, 0, 0.15);
+        padding: {
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+        border-radius: 5px;
+        &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            left: -10px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-right: 10px solid #fff;
+        }
+    }
+    &.system {
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        min-height: unset;
+        .avatar {
+            display: none;
+        }
+        .text {
+            background: rgba(0, 0, 0, 0.39);
+            color: #fff;
+            padding: 10px;
+            min-height: unset;
+            margin: 0 auto ;
+            &::before{
+                display: none;
             }
         }
     }
