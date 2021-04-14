@@ -15,7 +15,7 @@ export default class ChatItem extends Component {
                 </div>
                 <div className="details">
                     <div className="name">ismilawd</div>
-                    <div className="last-message">how are u bith ?</div>
+                    <div className="last-message">how are u ?</div>
                 </div>
                 <div className="actions">
                     <div className="menu"></div>

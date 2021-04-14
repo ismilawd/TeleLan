@@ -120,6 +120,8 @@
         margin: {
             left: 20px;
             right: 20px;
+            top: 5px;
+            bottom: 5px;
         }
         min-height: 60px;
         background-color: #fff;
@@ -158,10 +160,56 @@
             color: #fff;
             padding: 10px;
             min-height: unset;
-            margin: 0 auto ;
-            &::before{
+            margin: 0 auto;
+            &::before {
                 display: none;
             }
+        }
+    }
+}
+.text-area {
+    min-height: 80px;
+    background-color: #fff;
+    border-top: 1px solid #d1d4d8;
+    display: flex;
+    flex-grow: 1;
+    > {
+        .attachment,.send {
+            width: 80px;
+            height: 80px;
+            padding: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background-color: #d1d4d862;
+            }
+        }
+    }
+    .react-input-emoji--container {
+        margin: 0;
+        min-height: 80px;
+        display: flex;
+        border: none;
+        .react-input-emoji--placeholder{
+            left: 0;
+            width: 100%;
+        }
+        .react-input-emoji--input {
+            left: 0;
+            width: 100%;
+            padding: 0;
+            line-height:78px;
+            font-size: 18px;
+        }
+    }
+    .react-input-emoji--button{
+        width: 80px;
+        height: 80px;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color: #d1d4d862;
         }
     }
 }

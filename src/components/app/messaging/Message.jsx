@@ -11,11 +11,10 @@ export default class Message extends Component{
                 <div className="avatar">
                     <img src={img} />
                     <div className="time">
-                        19:59
+                        {this.props.time}
                     </div>
                 </div>
-                <div className="text">
-                    Hello bitch
+                <div className="text" dangerouslySetInnerHTML={{__html:this.props.children}}>
                 </div>
             </div>
         );
